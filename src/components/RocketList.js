@@ -7,7 +7,7 @@ export class RocketList extends Component {
         return (
             <div className="row">
                 {
-                rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
+                    rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
                 }
             </div>
         );
