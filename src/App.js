@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 import { RocketCard } from './components/RocketCard';
+import logo from './logo.svg';
 
 class App extends Component {
   render() {
+    const images = [logo];
+    const rockets = [
+      {
+        title: "Falcon Heavy",
+        images,
+        _id: 0
+      },
+      {
+        title: "Falcon Light",
+        images,
+        _id: 1
+      }
+    ];
     return (
       <div className="container">
         <div className="row">
@@ -12,9 +26,9 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm">
-            <RocketCard />
-          </div>
+          {
+            rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
+          }
         </div>
       </div>
     );
