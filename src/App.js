@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { RocketCard } from './components/RocketCard';
 import logo from './logo.svg';
+import { RocketList } from './components/RocketList';
 
 class App extends Component {
   render() {
@@ -25,11 +25,7 @@ class App extends Component {
             <h1 className="text-center">Rockets</h1>
           </div>
         </div>
-        <div className="row">
-          {
-            rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
-          }
-        </div>
+        <RocketList rockets={rockets} />
       </div>
     );
   }
