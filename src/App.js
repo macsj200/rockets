@@ -3,6 +3,8 @@ import './App.css';
 import logo from './logo.svg';
 import { RocketList } from './components/RocketList';
 
+export const RocketContext = React.createContext('rockets');
+
 class App extends Component {
   state = {
     rockets: [
@@ -21,14 +23,16 @@ class App extends Component {
   render() {
     const { rockets } = this.state;
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm">
-            <h1 className="text-center">Rockets</h1>
+      <RocketContext.Provider value={rockets}>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
+              <h1 className="text-center">Rockets</h1>
+            </div>
           </div>
+          <RocketList />
         </div>
-        <RocketList rockets={rockets} />
-      </div>
+      </RocketContext.Provider>
     );
   }
 }

@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { RocketCard } from './RocketCard';
+import { RocketContext } from '../App';
 
 export class RocketList extends Component {
     render() {
         const { rockets } = this.props;
         return (
-            <div className="row">
+            <RocketContext.Consumer>
                 {
-                    rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
+                    rockets => (
+                        <div className="row">
+                            {
+                                rockets.map(rocket => <RocketCard key={rocket._id} rocket={rocket} />)
+                            }
+                        </div>
+                    )
                 }
-            </div>
+            </RocketContext.Consumer>
         );
     }
 }
