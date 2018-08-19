@@ -4,20 +4,22 @@ import logo from './logo.svg';
 import { RocketList } from './components/RocketList';
 
 class App extends Component {
-  render() {
-    const images = [logo];
-    const rockets = [
+  state = {
+    rockets: [
       {
         title: "Falcon Heavy",
-        images,
+        images: [logo],
         _id: 0
       },
       {
         title: "Falcon Light",
-        images,
+        images: [logo],
         _id: 1
       }
-    ];
+    ]
+  }
+  render() {
+    const { rockets } = this.state;
     return (
       <div className="container">
         <div className="row">
