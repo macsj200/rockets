@@ -4,7 +4,6 @@ import { RocketContext } from '../App';
 
 export class RocketList extends Component {
     render() {
-        const { rockets } = this.props;
         return (
             <RocketContext.Consumer>
                 {
