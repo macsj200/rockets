@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from './logo.svg';
+import saturnv from './saturnv.jpg';
+import falconheavy from './falconheavy.jpg';
 import { RocketList } from './components/RocketList';
 
 export const RocketContext = React.createContext('rockets');
@@ -10,12 +11,12 @@ class App extends Component {
     rockets: [
       {
         title: "Falcon Heavy",
-        images: [logo],
+        images: [falconheavy],
         _id: 0
       },
       {
-        title: "Falcon Light",
-        images: [logo],
+        title: "Saturn V",
+        images: [saturnv],
         _id: 1
       }
     ]
