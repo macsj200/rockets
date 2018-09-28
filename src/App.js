@@ -6,22 +6,6 @@ import { RocketList } from './components/RocketList';
 
 export const RocketContext = React.createContext('rockets');
 
-function DisplayDuck(props) {
-  return <h3>{props.duck.name}</h3>
-}
-
-function ListDucks(props) {
-  return props.ducks.map(duck => <DisplayDuck duck={duck} />)
-}
-
-function DuckScreen(props) {
-  return <ListDucks ducks={props.ducks} />
-}
-
-function AppContainer(props) {
-  return <DuckScreen ducks={props.ducks} />
-}
-
 class App extends Component {
   state = {
     rockets: [
@@ -42,7 +26,6 @@ class App extends Component {
     return (
       <RocketContext.Provider value={rockets}>
         <div className="container">
-          <DuckScreen ducks={[ {name: 'Donald' }, { name: 'Scrooge McDuck' }]} />
           <div className="row">
             <div className="col-sm">
               <h1 className="text-center">Rockets</h1>
