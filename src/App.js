@@ -24,16 +24,14 @@ class App extends Component {
   render() {
     const { rockets } = this.state;
     return (
-      <RocketContext.Provider value={rockets}>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm">
-              <h1 className="text-center">Rockets</h1>
-            </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <h1 className="text-center">Rockets</h1>
           </div>
-          <RocketList />
         </div>
-      </RocketContext.Provider>
+        <RocketList rockets={rockets} /> {/* prop drilling */}
+      </div>
     );
   }
 }
